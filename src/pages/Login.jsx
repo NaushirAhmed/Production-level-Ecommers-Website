@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TextField from "@mui/material/TextField";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { MyContext } from "../Context/MyContext";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+
+  const history = useNavigate();
+   const context = useContext(MyContext);
+ 
+  const forgotPassword =()=>{
+     context.openAlertBox("success","otp send")
+      history("/verify");
+    }
+
+
+
   return (
     <section className="section py-10">
       <div className="container">
@@ -24,6 +37,7 @@ const Login = () => {
                 variant="outlined"
                 size="small"
                 className="w-full"
+                name="email"
               />
             </div>
             <div className="form-control mb-5 relative">
@@ -34,7 +48,8 @@ const Login = () => {
                 variant="outlined"
                 size="small"
                 className="w-full"
-              />
+                name="password"
+              /> 
               <Button
                 onClick={() => setShowPassword(!showPassword)}
                 className="!absolute top-[10px] right-[10px] z-50 !w-[35px] !h-[35px] !min-w-[35px] !rounded-full !text-black"
@@ -47,7 +62,7 @@ const Login = () => {
               </Button>
             </div>
 
-            <a className="link cursor-pointer text-[14px] font-[600]">
+            <a onClick={forgotPassword} className="link cursor-pointer text-[14px] font-[600]">
               Forget Password ?
             </a>
             <div className="flex items-center justify-center w-full mb-3">

@@ -11,6 +11,8 @@ import { MyContext } from "./Context/MyContext";
 
 import Drawer from "@mui/material/Drawer";
 
+import toast, { Toaster } from 'react-hot-toast';
+
 
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -21,6 +23,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import CartPanel from "./components/CartPanel";
 import Cart from "./pages/Cart";
+import Verify from "./pages/Verify";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   const [openProductDetailModel, setOpenProductDetailMode] = useState(false);
@@ -34,10 +38,21 @@ function App() {
     setOpenCart(newOpen);
   };
 
+  const openAlertBox = (status,msg)=>{
+
+    if(status === "success"){
+      toast.success(msg);
+    }
+    if(status === "error"){
+      toast.error(msg);
+    }
+  }
+
   // Create a stable context value
   const values = {
     setOpenProductDetailMode,
     setOpenCart,
+    openAlertBox
   };
 
   return (
@@ -51,9 +66,14 @@ function App() {
           <Route path="/products/:id" element={<ProductsDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-           <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/verify" element={<Verify />} />
+          <Route path="/forgotPassword" element={<ForgotPassword />} />
         </Routes>
         <Footer />
+        </MyContext.Provider>
+
+      <Toaster />
 
         <Dialog
           fullWidth={true}
@@ -99,7 +119,7 @@ function App() {
           <CartPanel/>
 
         </Drawer>
-      </MyContext.Provider>
+      
     </>
   );
 }
