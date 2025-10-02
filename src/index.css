@@ -87,7 +87,7 @@ body{
   overflow-x: hidden;
 }
 .sidebar .scroll::-webkit-scrollbar{
-  width: 3px !important;
+  width: 2px !important;
 }
 
 .ReactCollapse--collapse {
@@ -136,4 +136,37 @@ body{
 .otpPage.container{
   height:90vh;
   display: flex;
+}
+
+.scroll::-webkit-scrollbar{
+  width: 2px !important;
+}
+
+#account-menu .MuiPaper-root{
+  width: 200px;
+}
+.myaccount li a{
+  position:relative;
+  display: block;
+}
+.myaccount li a::before{
+  content:"";
+  width: 3px;
+  height: 50%;
+  position:absolute;
+  top: 50%;
+  left: 0;
+  background: rgb(199, 61, 61);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+.myaccount li a.active::before{
+  height: 100%;
+  opacity: 1;
+  top: 0px;
+}
+.myaccount li a.active button svg{
+  color:rgb(199, 61, 61) !important;
+  opacity:1 !important;
+
 }

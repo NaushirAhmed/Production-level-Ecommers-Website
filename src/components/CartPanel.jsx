@@ -134,7 +134,7 @@ const CartPanel = () => {
             Add to Cart
           </Button>
           </Link> 
-          <Link to='/cart' className="w-[50%]"><Button className="!w-full !bg-gray-300 !text-black !rounded-md gap-2 !mt-4  hover:!bg-red-500">
+          <Link to='/checkOut' className="w-[50%]"><Button className="!w-full !bg-gray-300 !text-black !rounded-md gap-2 !mt-4  hover:!bg-red-500">
              Checkout
           </Button>
           </Link> 

@@ -10,7 +10,6 @@ import { IoMdClose } from "react-icons/io";
 import { MyContext } from "./Context/MyContext";
 
 import Drawer from "@mui/material/Drawer";
-
 import toast, { Toaster } from 'react-hot-toast';
 
 
@@ -19,16 +18,22 @@ import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import ProductsZoom from "./components/Products/ProductsZoom";
 import ProductDetailComponent from "./components/Products/ProductDetailComponent";
+
+
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import CartPanel from "./components/CartPanel";
 import Cart from "./pages/Cart";
 import Verify from "./pages/Verify";
 import ForgotPassword from "./pages/ForgotPassword";
+import CheckOut from "./pages/CheckOut";
+import MyAccount from "./pages/MyAccount";
 
 function App() {
   const [openProductDetailModel, setOpenProductDetailMode] = useState(false);
   const [openCart, setOpenCart] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   const handleCloseProductDetailMode = () => {
     setOpenProductDetailMode(false);
@@ -52,7 +57,9 @@ function App() {
   const values = {
     setOpenProductDetailMode,
     setOpenCart,
-    openAlertBox
+    openAlertBox,
+    isLogin,
+    setIsLogin
   };
 
   return (
@@ -69,6 +76,8 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/verify" element={<Verify />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
+           <Route path="/checkOut" element={<CheckOut />} />
+            <Route path="/my-account" element={<MyAccount />} />
         </Routes>
         <Footer />
         </MyContext.Provider>

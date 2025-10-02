@@ -148,11 +148,12 @@ const Cart = () => {
             </p>
 
             <br />
-
-            <Button className="!capitalize !w-full !rounded-md !text-center !text-black !border-2 !bg-gray-400 hover:!bg-red-600 !gap-2">
+            <Link to='/checkOut'> 
+            <Button className="!capitalize !w-full !rounded-md !text-center !text-black !border-2 !bg-gray-400 hover:!bg-red-500 !gap-2">
               <IoBagCheck className="text-[20px]" />
-              <span className="text-[17px] "> Checkout</span>
+             <span className="text-[17px] "> Checkout</span>
             </Button>
+            </Link>
           </div>
         </div>
       </div>
