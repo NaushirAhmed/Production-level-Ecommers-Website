@@ -29,6 +29,8 @@ import Verify from "./pages/Verify";
 import ForgotPassword from "./pages/ForgotPassword";
 import CheckOut from "./pages/CheckOut";
 import MyAccount from "./pages/MyAccount";
+import MyList from "./pages/MyList";
+import MyOrders from "./pages/MyOrders";
 
 function App() {
   const [openProductDetailModel, setOpenProductDetailMode] = useState(false);
@@ -78,6 +80,8 @@ function App() {
           <Route path="/forgotPassword" element={<ForgotPassword />} />
            <Route path="/checkOut" element={<CheckOut />} />
             <Route path="/my-account" element={<MyAccount />} />
+             <Route path="/my-list" element={<MyList />} />
+              <Route path="/my-orders" element={<MyOrders />} />
         </Routes>
         <Footer />
         </MyContext.Provider>
