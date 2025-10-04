@@ -8,9 +8,10 @@ This is the frontend for the Nuravi project, a web application built with React.
 *   **My Orders**: A comprehensive list of all orders placed by the user.
 *   **My List**: A section for users to manage a personal list (e.g., a wishlist).
 *   **User Authentication**: Includes profile and logout functionality.
+*   **Payment Gateways**: User can purchase through any online payment platform.
 
 ## 🛠️ Technologies Used
-
+     ##Frontend
 *   **[React](https://reactjs.org/)**: A JavaScript library for building user interfaces.
 *   **[React Router](https://reactrouter.com/)**: For declarative routing in the application.
 *   **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for styling.
